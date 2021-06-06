@@ -7,7 +7,7 @@ class Doctor(models.Model):
     name = models.CharField(max_length=30)
     phone = models.CharField(max_length=11)
     email = models.EmailField(max_length=50)
-    address = models.CharField(max_length=255)
+    address = models.TextField()
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -50,7 +50,7 @@ class Receptionist(models.Model):
     sex = models.CharField(max_length=1,
                            choices=SEX_CHOICES,
                            default="M", )
-    address = models.CharField(max_length=255)
+    address = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
