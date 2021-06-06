@@ -1,4 +1,5 @@
 from django.db import models
+
 from departments.models import Department, BloodType
 
 
@@ -16,10 +17,17 @@ class Doctor(models.Model):
 
 
 class Patient(models.Model):
+    SEX_CHOICES = [
+        ('M', 'Male'),
+        ('F', 'Female'),
+    ]
+
     name = models.CharField(max_length=30)
     phone = models.CharField(max_length=11)
     age = models.IntegerField()
-    sex = models.CharField(max_length=10)
+    sex = models.CharField(max_length=1,
+                           choices=SEX_CHOICES,
+                           default="M", )
     blood_type = models.ForeignKey(BloodType, on_delete=models.CASCADE)
     city = models.CharField(max_length=30)
     supervisor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
