@@ -36,3 +36,23 @@ class Patient(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Receptionist(models.Model):
+    SEX_CHOICES = [
+        ('M', 'Male'),
+        ('F', 'Female'),
+    ]
+
+    name = models.CharField(max_length=30)
+    phone = models.CharField(max_length=11)
+    age = models.IntegerField()
+    sex = models.CharField(max_length=1,
+                           choices=SEX_CHOICES,
+                           default="M", )
+    address = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
