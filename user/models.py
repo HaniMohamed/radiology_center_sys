@@ -30,7 +30,6 @@ class Patient(models.Model):
                            default="M", )
     blood_type = models.ForeignKey(BloodType, on_delete=models.CASCADE)
     city = models.CharField(max_length=30)
-    supervisor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
