@@ -9,6 +9,7 @@ class Doctor(models.Model):
     email = models.EmailField(max_length=50)
     address = models.TextField()
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
+    notes = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -30,6 +31,7 @@ class Patient(models.Model):
                            default="M", )
     blood_type = models.ForeignKey(BloodType, on_delete=models.CASCADE)
     city = models.CharField(max_length=30)
+    notes = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -50,6 +52,7 @@ class Receptionist(models.Model):
                            choices=SEX_CHOICES,
                            default="M", )
     address = models.TextField()
+    notes = models.TextField(default=" ")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
