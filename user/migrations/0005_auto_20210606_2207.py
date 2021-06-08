@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             field=models.TextField(),
         ),
         migrations.AlterField(
-            model_name='receptionist',
+            model_name='receptionists',
             name='address',
             field=models.TextField(),
         ),

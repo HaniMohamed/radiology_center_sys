@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     #local apps
     'user.apps.UserConfig',
     'departments.apps.DepartmentsConfig',
+    'radiology.apps.RadiologyConfig',
 ]
 
 MIDDLEWARE = [
