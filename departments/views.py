@@ -1,13 +1,20 @@
-from django.http import HttpResponse
-from django.shortcuts import render
-from .models import Department, BloodType
-from django.template import loader
+from django.views.generic import DetailView, ListView
+from django.views.generic.edit import CreateView  # new
+
+from .models import Department
 
 
-def index(request):
-    departments = Department.objects.all()
-    context = {
-        'departments': departments,
-    }
-    return render(request, 'departments/index.html', context)
+class DepartmentListView(ListView):
+    model = Department
+    template_name = 'departments/home.html'
 
+
+class DepartmentCreateView(CreateView):
+    model = Department
+    template_name = 'departments/new.html'
+    fields = '__all__'
+
+
+class DepartmentDetailView(DetailView):
+    model = Department
+    template_name = 'departments/details.html'

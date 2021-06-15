@@ -1,0 +1,9 @@
+{% extends 'departments/base.html' %}
+{% block content %}
+    {% for department in object_list %}
+        <div class="post-entry">
+            <h2><a href="{% url 'department_detail' department.pk %}">{{ department.name }}</a></h2>
+            <p>{{ department.notes }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
