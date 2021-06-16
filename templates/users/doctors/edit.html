@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctors</title>
+</head>
+<body>
+<form action="{% url 'users:doctor' doctor.id %}" method="post">
+{% csrf_token %}
+<fieldset>
+    <legend><h1>{{ doctor.name }}</h1></legend>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    {% for department in doctor.department.all %}
+        <input type="radio" name="department" id="department{{ forloop.counter }}" value="{{ department.id }}">
+        <label for="department{{ forloop.counter }}">{{ department.name }}</label><br>
+    {% endfor %}
+</fieldset>
+<input type="submit" value="Doctor">
+</form>
+</body>
+</html>

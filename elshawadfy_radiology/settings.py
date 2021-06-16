@@ -38,10 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # 3rd-party apps
+    'rest_framework',
+
     #local apps
     'user.apps.UserConfig',
     'departments.apps.DepartmentsConfig',
     'radiology.apps.RadiologyConfig',
+    'api.apps.ApiConfig',
 ]
 
 MIDDLEWARE = [
@@ -115,13 +119,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+# USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
