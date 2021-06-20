@@ -68,7 +68,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-JWT_AUTH = {
+SIMPLE_JWT = {
     # how long the original token is valid for
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=2),
 
@@ -173,7 +173,8 @@ USE_L10N = True
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 SITE_ID = 1
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://elshwadfy-system.herokuapp.com/']
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
