@@ -1,1 +1,1 @@
-web: gunicorn elshwadfy_radiology.wsgi --log-file -
+web: gunicorn elshawadfy_radiology.wsgi --log-file -
