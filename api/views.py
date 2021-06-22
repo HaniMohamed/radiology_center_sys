@@ -2,7 +2,7 @@ from rest_framework import generics
 
 from departments.models import Department
 from user.models import Doctor
-from .serializers import DepartmentSerializer, DoctorSerializer
+from .serializers import DepartmentSerializer, DoctorWithDepthSerializer, DoctorSerializer
 
 
 class DepartmentList(generics.ListCreateAPIView):
@@ -17,9 +17,20 @@ class DepartmentDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class DoctorList(generics.ListCreateAPIView):
     queryset = Doctor.objects.all()
-    serializer_class = DoctorSerializer
+    serializer_class = DoctorWithDepthSerializer
 
 
-class DoctorDetail(generics.RetrieveUpdateDestroyAPIView):
+class DoctorDetail(generics.RetrieveDestroyAPIView):
+    queryset = Doctor.objects.all()
+    serializer_class = DoctorWithDepthSerializer(partial=True)
+
+
+class DoctorCreate(generics.CreateAPIView):
     queryset = Doctor.objects.all()
     serializer_class = DoctorSerializer(partial=True)
+
+
+class DoctorUpdate(generics.UpdateAPIView):
+    queryset = Doctor.objects.all()
+    serializer_class = DoctorSerializer(partial=True)
+

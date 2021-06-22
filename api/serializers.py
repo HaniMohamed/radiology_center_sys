@@ -10,9 +10,14 @@ class DepartmentSerializer(serializers.ModelSerializer):
         model = Department
 
 
-class DoctorSerializer(serializers.ModelSerializer):
-    department = DepartmentSerializer(many=False)
-
+class DoctorWithDepthSerializer(serializers.ModelSerializer):
     class Meta:
         fields = fields = '__all__'
+        model = Doctor
+        depth = 1
+
+
+class DoctorSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'
         model = Doctor
