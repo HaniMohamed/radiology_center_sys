@@ -20,7 +20,7 @@ class DoctorList(generics.ListCreateAPIView):
     serializer_class = DoctorWithDepthSerializer
 
 
-class DoctorDetail(generics.RetrieveDestroyAPIView):
+class DoctorRetrieveDestroy(generics.RetrieveDestroyAPIView):
     queryset = Doctor.objects.all()
     serializer_class = DoctorWithDepthSerializer
 
