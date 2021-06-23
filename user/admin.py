@@ -6,4 +6,4 @@ from .models import Doctor, Patient, Receptionist, CustomUser
 admin.site.register(Doctor)
 admin.site.register(Patient)
 admin.site.register(Receptionist)
-# admin.site.register(CustomUser)
+admin.site.register(CustomUser)
