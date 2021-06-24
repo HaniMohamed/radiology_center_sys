@@ -19,7 +19,7 @@ class Radiology(models.Model):
 
 
 class Examination(models.Model):
-    patient = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="patient")
+    patient = models.ForeignKey(queryset = CustomUser.objects.filter(type="P"), on_delete=models.CASCADE, related_name="patient")
     supervisor = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     notes = models.TextField(blank=True, null=True)
     radiology = models.ManyToManyField(Radiology)
