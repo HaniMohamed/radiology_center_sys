@@ -4,11 +4,6 @@ from departments.models import Department
 from user.models import CustomUser
 
 
-class DepartmentSerializer(serializers.ModelSerializer):
-    class Meta:
-        fields = fields = '__all__'
-        model = Department
-
 
 class UserWithDepthSerializer(serializers.ModelSerializer):
     class Meta:

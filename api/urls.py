@@ -9,8 +9,7 @@ urlpatterns = [
     path('users/logout/', auth_views.LogoutView.as_view(), name='auth_logout'),
 
     path('departments/', include('departments.urls')),
-    # path('departments/create', department_views.DepartmentCreate.as_view()),
-    # path('departments/<int:pk>/', department_views.DepartmentDetail.as_view()),
+
 
     # Doctors APIs
     path('doctors/', views.DoctorList.as_view()),
