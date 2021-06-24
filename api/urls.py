@@ -14,5 +14,8 @@ urlpatterns = [
     # users APIs
     path('users/', include('user.urls')),
 
+    # radiology APIs
+    path('', include('radiology.urls')),
+
 
 ]
