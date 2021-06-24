@@ -5,8 +5,8 @@ from departments import views as department_views
 from . import views
 
 urlpatterns = [
-    path('users/login/', auth_views.CustomTokenObtainPairView.as_view(), name='auth_login'),
-    path('users/logout/', auth_views.LogoutView.as_view(), name='auth_logout'),
+    path('user/login/', auth_views.CustomTokenObtainPairView.as_view(), name='auth_login'),
+    path('user/logout/', auth_views.LogoutView.as_view(), name='auth_logout'),
 
     path('departments/', include('departments.urls')),
 
