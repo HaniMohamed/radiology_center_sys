@@ -1,9 +1,17 @@
 from rest_framework import generics
+from rest_framework_simplejwt.views import TokenViewBase
 
 from departments.models import Department
 from user.models import CustomUser
-from .serializers import DepartmentSerializer, UserWithDepthSerializer, UserSerializer
+from .serializers import DepartmentSerializer, UserWithDepthSerializer, UserSerializer, CustomTokenObtainPairSerializer
 
+
+class CustomTokenObtainPairView(TokenViewBase):
+    """
+    Takes a set of user credentials and returns an access and refresh JSON web
+    token pair to prove the authentication of those credentials.
+    """
+    serializer_class = CustomTokenObtainPairSerializer
 
 class DepartmentList(generics.ListCreateAPIView):
     queryset = Department.objects.all()
