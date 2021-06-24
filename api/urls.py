@@ -11,11 +11,8 @@ urlpatterns = [
     path('departments/', include('departments.urls')),
 
 
-    # Doctors APIs
+    # users APIs
     path('users/', include('user.urls')),
-    # path('doctors/create', views.UserCreate.as_view()),
-    # path('doctors/<int:pk>/', views.UserDetails.as_view()),
-    # path('doctors/<int:pk>/update', views.UserUpdate.as_view()),
-    # path('doctors/<int:pk>/delete', views.UserDelete.as_view()),
+
 
 ]
