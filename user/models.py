@@ -25,7 +25,7 @@ class CustomUser(AbstractUser):
                            choices=SEX_CHOICES,
                            default="M", )
     age = models.IntegerField(blank=True, null=True)
-    blood_type = models.ForeignKey(BloodType, on_delete=models.CASCADE, default=1)
+    blood_type = models.ForeignKey(BloodType, on_delete=models.CASCADE, blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
     department = models.ForeignKey(Department, on_delete=models.CASCADE, blank=True, null=True)
 

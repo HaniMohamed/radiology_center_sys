@@ -15,7 +15,7 @@ class MyUserAdmin(UserAdmin):
     form = MyUserChangeForm
     add_form = MyUserCreationForm
     fieldsets = UserAdmin.fieldsets + (
-        (None, {'fields': ('type', 'sex', 'blood_type')}),
+        (None, {'fields': ('type', 'sex', 'blood_type', 'department')}),
     )
 
 
