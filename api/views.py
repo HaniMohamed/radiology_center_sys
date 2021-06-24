@@ -20,8 +20,8 @@ class DepartmentDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = DepartmentSerializer
 
 
-class UserList(generics.ListCreateAPIView):
-    queryset = CustomUser.objects.all()
+class DoctorList(generics.ListCreateAPIView):
+    queryset = CustomUser.objects.filter(type="D")
     serializer_class = UserWithDepthSerializer
 
 
