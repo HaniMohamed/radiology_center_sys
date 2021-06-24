@@ -6,5 +6,5 @@ from .models import Department
 
 class DepartmentSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = fields = '__all__'
+        fields = '__all__'
         model = Department
