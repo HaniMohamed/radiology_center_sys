@@ -14,6 +14,7 @@ from .models import CustomUser
 class MyUserAdmin(UserAdmin):
     form = MyUserChangeForm
     add_form = MyUserCreationForm
+    list_display = ('username', 'type', 'phone', 'department')
     fieldsets = UserAdmin.fieldsets + (
         (None, {'fields': ('type', 'sex', 'blood_type', 'department')}),
     )
