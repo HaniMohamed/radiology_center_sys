@@ -7,7 +7,7 @@ class UserWithDepthSerializer(serializers.ModelSerializer):
     class Meta:
         fields = (
             'id', 'username', 'first_name', 'last_name', 'sex', 'age', 'blood_type', 'department', 'phone', 'address',
-            'notes')
+            'notes', 'type',)
         model = CustomUser
         depth = 1
 
@@ -16,5 +16,5 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         fields = (
             'id', 'username', 'first_name', 'last_name', 'sex', 'age', 'blood_type', 'department', 'phone', 'address',
-            'notes')
+            'notes', 'type',)
         model = CustomUser
