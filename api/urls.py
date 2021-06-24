@@ -12,10 +12,10 @@ urlpatterns = [
 
 
     # Doctors APIs
-    path('doctors/', views.DoctorList.as_view()),
-    path('doctors/create', views.UserCreate.as_view()),
-    path('doctors/<int:pk>/', views.UserDetails.as_view()),
-    path('doctors/<int:pk>/update', views.UserUpdate.as_view()),
-    path('doctors/<int:pk>/delete', views.UserDelete.as_view()),
+    path('users/', include('user.urls')),
+    # path('doctors/create', views.UserCreate.as_view()),
+    # path('doctors/<int:pk>/', views.UserDetails.as_view()),
+    # path('doctors/<int:pk>/update', views.UserUpdate.as_view()),
+    # path('doctors/<int:pk>/delete', views.UserDelete.as_view()),
 
 ]
