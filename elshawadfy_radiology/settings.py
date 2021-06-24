@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # 3rd-party apps
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_simplejwt.token_blacklist',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
