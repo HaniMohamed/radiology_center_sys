@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from departments.models import Department
-from user.models import Doctor
+from user.models import CustomUser
 
 
 class DepartmentSerializer(serializers.ModelSerializer):
@@ -10,14 +10,14 @@ class DepartmentSerializer(serializers.ModelSerializer):
         model = Department
 
 
-class DoctorWithDepthSerializer(serializers.ModelSerializer):
+class UserWithDepthSerializer(serializers.ModelSerializer):
     class Meta:
         fields = fields = '__all__'
-        model = Doctor
+        model = CustomUser
         depth = 1
 
 
-class DoctorSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
-        model = Doctor
+        model = CustomUser

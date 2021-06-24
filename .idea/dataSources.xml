@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="elshwadfy_db" uuid="0b6bade7-7ec3-4585-8883-bc48bdd0b21e">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/elshwadfy_db</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="elshawadfy_sqlite" uuid="386c5d88-9e1c-44a7-9206-9d2d15da79ee">
+    <data-source source="LOCAL" name="elshawadfy_db" uuid="47d2ecf6-d615-48d3-af78-4e8fe787ce14">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>

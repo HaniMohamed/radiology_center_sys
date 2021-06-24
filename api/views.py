@@ -1,8 +1,8 @@
 from rest_framework import generics
 
 from departments.models import Department
-from user.models import Doctor
-from .serializers import DepartmentSerializer, DoctorWithDepthSerializer, DoctorSerializer
+from user.models import CustomUser
+from .serializers import DepartmentSerializer, UserWithDepthSerializer, UserSerializer
 
 
 class DepartmentList(generics.ListCreateAPIView):
@@ -20,26 +20,26 @@ class DepartmentDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = DepartmentSerializer
 
 
-class DoctorList(generics.ListCreateAPIView):
-    queryset = Doctor.objects.all()
-    serializer_class = DoctorWithDepthSerializer
+class UserList(generics.ListCreateAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserWithDepthSerializer
 
 
-class DoctorDetails(generics.RetrieveDestroyAPIView):
-    queryset = Doctor.objects.all()
-    serializer_class = DoctorWithDepthSerializer
+class UserDetails(generics.RetrieveDestroyAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserWithDepthSerializer
 
 
-class DoctorCreate(generics.CreateAPIView):
-    queryset = Doctor.objects.all()
-    serializer_class = DoctorSerializer
+class UserCreate(generics.CreateAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserSerializer
 
 
-class DoctorUpdate(generics.UpdateAPIView):
-    queryset = Doctor.objects.all()
-    serializer_class = DoctorSerializer
+class UserUpdate(generics.UpdateAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserSerializer
 
 
-class DoctorDelete(generics.DestroyAPIView):
-    queryset = Doctor.objects.all()
-    serializer_class = DoctorSerializer
+class UserDelete(generics.DestroyAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserSerializer
