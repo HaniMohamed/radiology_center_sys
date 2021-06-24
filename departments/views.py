@@ -1,20 +1,19 @@
-from django.views.generic import DetailView, ListView
-from django.views.generic.edit import CreateView  # new
+from rest_framework import generics
 
 from .models import Department
+from .serializers import DepartmentSerializer
 
 
-class DepartmentListView(ListView):
-    model = Department
-    template_name = 'departments/home.html'
+class DepartmentList(generics.ListCreateAPIView):
+    queryset = Department.objects.all()
+    serializer_class = DepartmentSerializer
 
 
-class DepartmentCreateView(CreateView):
-    model = Department
-    template_name = 'departments/new.html'
-    fields = '__all__'
+class DepartmentCreate(generics.CreateAPIView):
+    queryset = Department.objects.all()
+    serializer_class = DepartmentSerializer
 
 
-class DepartmentDetailView(DetailView):
-    model = Department
-    template_name = 'departments/details.html'
+class DepartmentDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Department.objects.all()
+    serializer_class = DepartmentSerializer

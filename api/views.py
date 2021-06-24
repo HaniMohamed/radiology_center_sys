@@ -1,23 +1,7 @@
 from rest_framework import generics
 
-from departments.models import Department
 from user.models import CustomUser
-from .serializers import DepartmentSerializer, UserWithDepthSerializer, UserSerializer
-
-
-class DepartmentList(generics.ListCreateAPIView):
-    queryset = Department.objects.all()
-    serializer_class = DepartmentSerializer
-
-
-class DepartmentCreate(generics.CreateAPIView):
-    queryset = Department.objects.all()
-    serializer_class = DepartmentSerializer
-
-
-class DepartmentDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Department.objects.all()
-    serializer_class = DepartmentSerializer
+from .serializers import UserWithDepthSerializer, UserSerializer
 
 
 class DoctorList(generics.ListCreateAPIView):
