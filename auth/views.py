@@ -12,7 +12,7 @@ class CustomTokenObtainPairView(TokenViewBase):
     serializer_class = CustomTokenObtainPairSerializer
 
 
-class LogoutAllView(APIView):
+class LogoutView(APIView):
     permission_classes = (IsAuthenticated,)
 
     def post(self, request):
