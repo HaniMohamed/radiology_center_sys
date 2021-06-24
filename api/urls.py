@@ -1,9 +1,12 @@
 from django.urls import path
 
+from auth import views as auth_views
 from . import views
 
 urlpatterns = [
-    path('users/login/', views.CustomTokenObtainPairView.as_view()),
+    path('users/login/', auth_views.CustomTokenObtainPairView.as_view(), name='auth_login'),
+    path('users/logout/', auth_views.LogoutView.as_view(), name='auth_logout'),
+
     path('departments/', views.DepartmentList.as_view()),
     path('departments/create', views.DepartmentCreate.as_view()),
     path('departments/<int:pk>/', views.DepartmentDetail.as_view()),
