@@ -28,7 +28,8 @@ class CustomUser(AbstractUser):
     blood_type = models.ForeignKey(BloodType, on_delete=models.CASCADE, blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
     department = models.ForeignKey(Department, on_delete=models.CASCADE, blank=True, null=True)
-
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
 
 # class Doctor(models.Model):
