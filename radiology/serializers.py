@@ -19,4 +19,4 @@ class ExaminationWithDepthSerializer(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
         model = Examination
-        depth = 1
+        depth = 2
