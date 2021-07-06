@@ -3,10 +3,11 @@ from rest_framework import serializers
 from .models import Radiology, Examination
 
 
-class RadiologySerializer(serializers.ModelSerializer):
+class RadiologyWithDepthSerializer(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
         model = Radiology
+        depth = 5
 
 
 class ExaminationSerializer(serializers.ModelSerializer):

@@ -2,22 +2,22 @@
 from rest_framework import generics
 
 from radiology.models import Radiology, Examination
-from radiology.serializers import RadiologySerializer, ExaminationSerializer, ExaminationWithDepthSerializer
+from radiology.serializers import RadiologyWithDepthSerializer, ExaminationSerializer, ExaminationWithDepthSerializer
 
 
 class RadiologyList(generics.ListCreateAPIView):
     queryset = Radiology.objects.all()
-    serializer_class = RadiologySerializer
+    serializer_class = RadiologyWithDepthSerializer
 
 
 class RadiologyCreate(generics.CreateAPIView):
     queryset = Radiology.objects.all()
-    serializer_class = RadiologySerializer
+    serializer_class = RadiologyWithDepthSerializer
 
 
 class RadiologyDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Radiology.objects.all()
-    serializer_class = RadiologySerializer
+    serializer_class = RadiologyWithDepthSerializer
 
 
 class ExaminationList(generics.ListCreateAPIView):
