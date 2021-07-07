@@ -2,7 +2,8 @@
 from rest_framework import generics
 
 from radiology.models import Radiology, Examination
-from radiology.serializers import RadiologyWithDepthSerializer, ExaminationSerializer, ExaminationWithDepthSerializer
+from radiology.serializers import RadiologyWithDepthSerializer, ExaminationSerializer, ExaminationWithDepthSerializer, \
+    RadiologySerializer
 
 
 class RadiologyList(generics.ListCreateAPIView):
@@ -15,9 +16,19 @@ class RadiologyCreate(generics.CreateAPIView):
     serializer_class = RadiologyWithDepthSerializer
 
 
-class RadiologyDetail(generics.RetrieveUpdateDestroyAPIView):
+class RadiologyDetail(generics.RetrieveAPIView):
     queryset = Radiology.objects.all()
     serializer_class = RadiologyWithDepthSerializer
+
+
+class RadiologyUpdate(generics.UpdateAPIView):
+    queryset = Radiology.objects.all()
+    serializer_class = RadiologySerializer
+
+
+class RadiologyDelete(generics.DestroyAPIView):
+    queryset = Radiology.objects.all()
+    serializer_class = RadiologySerializer
 
 
 class ExaminationList(generics.ListCreateAPIView):

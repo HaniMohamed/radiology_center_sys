@@ -8,6 +8,8 @@ urlpatterns = [
     path('radiology', views.RadiologyList.as_view(), name='radiology_list'),
     path('radiology/new', views.RadiologyCreate.as_view(), name='radiology_new'),
     path('radiology/<int:pk>', views.RadiologyDetail.as_view(), name='radiology_detail'),
+    path('radiology/update/<int:pk>', views.RadiologyUpdate.as_view(), name='radiology_update'),
+    path('radiology/delete/<int:pk>', views.RadiologyDelete.as_view(), name='radiology_delete'),
 
     # Examination urls
     path('examination', views.ExaminationList.as_view(), name='examination_list'),
