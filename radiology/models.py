@@ -7,7 +7,7 @@ from user.models import CustomUser
 
 class Radiology(models.Model):
     name = models.CharField(max_length=30)
-    doctor = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    # doctor = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=6, decimal_places=2, editable=True)
     medical_insurance_discount = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
