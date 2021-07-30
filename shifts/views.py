@@ -15,7 +15,7 @@ class ShiftList(generics.ListCreateAPIView):
 
 class ShiftCreate(generics.CreateAPIView):
     queryset = Shift.objects.all()
-    serializer_class = ShiftWithDepthSerializer
+    serializer_class = ShiftSerializer
 
 
 class ShiftDetail(generics.RetrieveAPIView):
