@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'radiology.apps.RadiologyConfig',
     'api.apps.ApiConfig',
     'shifts.apps.ShiftsConfig',
+    'insurance.apps.InsuranceConfig',
 ]
 
 REST_FRAMEWORK = {
