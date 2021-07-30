@@ -11,6 +11,9 @@ urlpatterns = [
     path('departments/', include('departments.urls')),
 
 
+    path('insurance/', include('insurance.urls')),
+
+
     # users APIs
     path('users/', include('user.urls')),
 
