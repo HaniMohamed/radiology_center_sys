@@ -14,6 +14,9 @@ urlpatterns = [
     # users APIs
     path('users/', include('user.urls')),
 
+    # shifts APIs
+    path('shifts/', include('user.urls')),
+
     # radiology APIs
     path('', include('radiology.urls')),
 
