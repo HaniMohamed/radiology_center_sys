@@ -14,4 +14,4 @@ class Shift(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.receptionist.first_name
+        return self.receptionist.username
