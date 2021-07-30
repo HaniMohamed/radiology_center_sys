@@ -32,25 +32,25 @@ class RadiologyDelete(generics.DestroyAPIView):
 
 
 class ExaminationList(generics.ListCreateAPIView):
-    queryset = Examination.objects.all()
+    queryset = Examination.objects.order_by('created_at')
     serializer_class = ExaminationWithDepthSerializer
 
 
 class ExaminationDetails(generics.RetrieveDestroyAPIView):
-    queryset = Examination.objects.all()
+    queryset = Examination.objects.order_by('created_at')
     serializer_class = ExaminationWithDepthSerializer
 
 
 class ExaminationCreate(generics.CreateAPIView):
-    queryset = Examination.objects.all()
+    queryset = Examination.objects.order_by('created_at')
     serializer_class = ExaminationSerializer
 
 
 class ExaminationUpdate(generics.UpdateAPIView):
-    queryset = Examination.objects.all()
+    queryset = Examination.objects.order_by('created_at')
     serializer_class = ExaminationSerializer
 
 
 class ExaminationDelete(generics.DestroyAPIView):
-    queryset = Examination.objects.all()
+    queryset = Examination.objects.order_by('created_at')
     serializer_class = ExaminationSerializer
