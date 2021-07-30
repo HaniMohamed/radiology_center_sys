@@ -1,5 +1,6 @@
 from django.db import models
 
+from insurance.models import Insurance
 from shifts.models import Shift
 from user.models import CustomUser
 
@@ -25,6 +26,7 @@ class Examination(models.Model):
     another_supervisor = models.CharField(max_length=30, blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
     radiology = models.ManyToManyField(Radiology)
+    insurance = models.ForeignKey(Insurance, on_delete=models.CASCADE, blank=True, null=True)
     total_price = models.DecimalField(max_digits=6, decimal_places=2)
     shift = models.ForeignKey(Shift, on_delete=models.CASCADE, blank=True, null=True)
     actual_price = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
