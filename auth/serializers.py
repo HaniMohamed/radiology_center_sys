@@ -15,6 +15,7 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         refresh = self.get_token(self.user)
         data['user_type'] = self.user.type
         data['username'] = self.user.username
+        data['id'] = self.user.id
 
         data['refresh'] = str(refresh)
 
