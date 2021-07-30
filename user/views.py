@@ -1,4 +1,6 @@
 from rest_framework import generics
+from django_filters.rest_framework import DjangoFilterBackend
+
 
 from .models import CustomUser
 from .serializers import UserWithDepthSerializer, UserSerializer
@@ -12,6 +14,8 @@ class DoctorList(generics.ListCreateAPIView):
 class PatientList(generics.ListCreateAPIView):
     queryset = CustomUser.objects.filter(type="P").order_by('-created_at')
     serializer_class = UserWithDepthSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['phone', 'first_name']
 
 
 class ReceptionistList(generics.ListCreateAPIView):
