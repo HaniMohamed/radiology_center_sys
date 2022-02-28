@@ -10,7 +10,6 @@ class Shift(models.Model):
     receptionist = ForeignKey(CustomUser, on_delete=models.CASCADE, )
     total_income = models.DecimalField(max_digits=100, decimal_places=2, default=0.0)
     closed = models.BooleanField(default=False, )
-    other_shift = models.BooleanField(default=False, )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
